@@ -23,15 +23,18 @@ def get_days_from_today(date: str):
     except ValueError as e:
         print(f'Date parsing error: {e}')
         print(f'Invalid date format "{date}". Expected: "YYYY.MM.DD", "YYYY/MM/DD" or "YYYY-MM-DD"')
-        return print(f'today: {datetime.today().date()}, target day: {None}')
+        res = f'today: {datetime.today().date()}, target day: {None}'
+        return res
 
     except TypeError as e:
         print(f'Type parsing error: {e}')
-        return print(f'today: {datetime.today().date()}, target day: {None}')
+        res = f'today: {datetime.today().date()}, target day: {None}'
+        return res
 
     except Exception as e:
         print(f'Unexpected parsing error: {e}')
-        return print(f'today: {datetime.today().date()}, target day: {None}')
+        res = f'today: {datetime.today().date()}, target day: {None}'
+        return res
 
 
 # for Testing

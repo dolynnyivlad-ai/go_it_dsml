@@ -14,15 +14,17 @@ raw_numbers = [
 
 
 def normalize_phone(phone_number):
-    pattern = r'[^\d+]' # видаляю все окрім діджитальних та плюса
+    pattern = r'[^\d+]'  # видаляю все окрім діджитальних та плюса
     replacement = ''
     cleaned = re.sub(pattern, replacement, phone_number)
-    if cleaned.startswith('+380'):
+    if cleaned.startswith('+'):
         return cleaned
-    elif cleaned.startswith('38'):
+    elif cleaned.startswith('380'):
         return '+' + cleaned
     elif cleaned.startswith('0'):
         return '+38' + cleaned
+    else:
+        return '+' + cleaned
 
     return list()
 
